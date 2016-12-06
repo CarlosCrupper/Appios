@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0806A31A1DF71A6600F5B843 /* DetalleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0806A3191DF71A6600F5B843 /* DetalleViewController.swift */; };
+		0806A31C1DF739CA00F5B843 /* AgregarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0806A31B1DF739CA00F5B843 /* AgregarViewController.swift */; };
 		B3853C631DF5D7F000F046D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3853C621DF5D7F000F046D7 /* AppDelegate.swift */; };
 		B3853C651DF5D7F000F046D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3853C641DF5D7F000F046D7 /* ViewController.swift */; };
 		B3853C681DF5D7F000F046D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3853C661DF5D7F000F046D7 /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0806A3191DF71A6600F5B843 /* DetalleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalleViewController.swift; sourceTree = "<group>"; };
+		0806A31B1DF739CA00F5B843 /* AgregarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgregarViewController.swift; sourceTree = "<group>"; };
 		B3853C5F1DF5D7EF00F046D7 /* AppDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3853C621DF5D7F000F046D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3853C641DF5D7F000F046D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				B3853C6B1DF5D7F000F046D7 /* LaunchScreen.storyboard */,
 				B3853C6E1DF5D7F000F046D7 /* Info.plist */,
 				B3853C741DF5F71800F046D7 /* FilaTableViewCell.swift */,
+				0806A3191DF71A6600F5B843 /* DetalleViewController.swift */,
+				0806A31B1DF739CA00F5B843 /* AgregarViewController.swift */,
 			);
 			path = AppDemo;
 			sourceTree = "<group>";
@@ -139,9 +145,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0806A31A1DF71A6600F5B843 /* DetalleViewController.swift in Sources */,
 				B3853C651DF5D7F000F046D7 /* ViewController.swift in Sources */,
 				B3853C631DF5D7F000F046D7 /* AppDelegate.swift in Sources */,
 				B3853C751DF5F71800F046D7 /* FilaTableViewCell.swift in Sources */,
+				0806A31C1DF739CA00F5B843 /* AgregarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +309,7 @@
 				B3853C731DF5D7F000F046D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
