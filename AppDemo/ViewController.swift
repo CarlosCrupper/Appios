@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, DetalleViewControllerDelegate, AgregarViewControllerDelegate{
     
@@ -19,17 +20,154 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var esEdicion = false
     
-    var datos = [("Alan", 30), ("Carlos", 21), ("Eduardo", 12), ("Jorge", 23), ("Marina", 12), ("Martha", 20)]
+    var datos = [("Alan", 30),
+                 ("Carlos", 21),
+                 ("Eduardo", 12),
+                 ("Jorge", 23),
+                 ("Marina", 12),
+                 ("Martha", 20),
+                 ("Alan", 30),
+                 ("Carlos", 21),
+                 ("Eduardo", 12),
+                 ("Jorge", 23),
+                 ("Marina", 12),
+                 ("Martha", 20),
+                 ("Alan", 30),
+                 ("Carlos", 21),
+                 ("Eduardo", 12),
+                 ("Jorge", 23),
+                 ("Marina", 12),
+                 ("Martha", 20),
+                 ("Alan", 30),
+                 ("Carlos", 21),
+                 ("Eduardo", 12),
+                 ("Jorge", 23),
+                 ("Marina", 12),
+                 ("Martha", 20),
+                 ("Alan", 30),
+                 ("Carlos", 21),
+                 ("Eduardo", 12),
+                 ("Jorge", 23),
+                 ("Marina", 12),
+                 ("Martha", 20),
+                 ("Alan", 30),
+                 ("Carlos", 21),
+                 ("Eduardo", 12),
+                 ("Jorge", 23),
+                 ("Marina", 12),
+                 ("Martha", 20),
+                 ("Carlos", 21),
+                 ("Eduardo", 12),
+                 ("Jorge", 23),
+                 ("Marina", 12),
+                 ("Martha", 20),
+                 ("Alan", 30),
+                 ("Carlos", 21),
+                 ("Eduardo", 12),
+                 ("Jorge", 23),
+                 ("Marina", 12),
+                 ("Martha", 20),
+                 ("Alan", 30),
+                 ("Carlos", 21),
+                 ("Eduardo", 12),
+                 ("Jorge", 23),
+                 ("Marina", 12),
+                 ("Martha", 20),
+                 ("Alan", 30),
+                 ("Carlos", 21),
+                 ("Eduardo", 12),
+                 ("Jorge", 23),
+                 ("Marina", 12),
+                 ("Martha", 20),
+                 ("Carlos", 21),
+                 ("Eduardo", 12),
+                 ("Jorge", 23),
+                 ("Marina", 12),
+                 ("Martha", 20),
+                 ("Alan", 30),
+                 ("Carlos", 21),
+                 ("Eduardo", 12),
+                 ("Jorge", 23),
+                 ("Marina", 12),
+                 ("Martha", 20),
+                 ("Alan", 30),
+                 ("Carlos", 21),
+                 ("Eduardo", 12),
+                 ("Jorge", 23),
+                 ("Marina", 12),
+                 ("Martha", 20),
+                 ("Alan", 30),
+                 ("Carlos", 21),
+                 ("Eduardo", 12),
+                 ("Jorge", 23),
+                 ("Marina", 12),
+                 ("Martha", 20),
+                 ("Carlos", 21),
+                 ("Eduardo", 12),
+                 ("Jorge", 23),
+                 ("Marina", 12),
+                 ("Martha", 20),
+                 ("Alan", 30),
+                 ("Carlos", 21),
+                 ("Eduardo", 12),
+                 ("Jorge", 23),
+                 ("Marina", 12),
+                 ("Martha", 20),
+                 ("Alan", 30),
+                 ("Carlos", 21),
+                 ("Eduardo", 12),
+                 ("Jorge", 23),
+                 ("Marina", 12),
+                 ("Martha", 20),
+                 ("Alan", 30),
+                 ("Carlos", 21),
+                 ("Eduardo", 12),
+                 ("Jorge", 23),
+                 ("Marina", 12),
+                 ("Martha", 20)]
+    
+    
+    @IBOutlet weak var imgFoto: UIImageView!
+    @IBOutlet weak var lblNombre: UILabel!
+    
     
     @IBAction func btnAgregar_Click(_ sender: Any) {
         performSegue(withIdentifier: "Agregar Segue", sender: self)
     }
     
     
+    @IBAction func btnRefresh(_ sender: Any) {
+        //let url = URL(string: "https://s-media-cache-ak0.pinimg.com/originals/56/24/01/5624015d24089c606e652d6e569c0982.png")
+        
+        //let url = URL(string: "http://es.fordesigner.com/imguploads/Image/cjbc/zcool/png20080526/1211804902.png")
+        
+        let idFacebook = FBSDKAccessToken.current().userID
+        
+        let cadenaUrl = "http://graph.facebook.com/\(idFacebook!)/picture?type=large"
+        
+       /* let url = URL(string: cadenaUrl)
+        let dato : Data?
+        
+        
+        do{
+            dato = try Data(contentsOf: url!)
+            imgFoto.image = UIImage(data: dato!)
+        }catch{
+            print("Error cargando la imagen.! \(error.localizedDescription)")
+            dato = nil
+            imgFoto.image = UIImage(named: "disco")*/
+        
+        imgFoto.loadPicture(url: cadenaUrl)
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         print("vista cargada")
+        imgFoto.image = UIImage(named: "disco")
+        lblNombre.text = "Carlos"
     }
 
     override func didReceiveMemoryWarning() {
@@ -153,7 +291,25 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             vista.lbIzquierda.text = "\(datos[indexPath.row].0)"
             vista.lbDerecha.text = "\(datos[indexPath.row].1)"
         
-            return vista
+        let idFacebook = FBSDKAccessToken.current().userID
+        
+        let cadenaUrl = "http://graph.facebook.com/\(idFacebook!)/picture?type=large"
+        
+        let url = URL(string: cadenaUrl)
+        let dato : Data?
+        
+        
+        do{
+            dato = try Data(contentsOf: url!)
+            vista.imgFoto.image = UIImage(data: dato!)
+        }catch{
+            print("Error cargando la imagen.! \(error.localizedDescription)")
+            dato = nil
+            vista.imgFoto.image = UIImage(named: "disco")
+        }
+
+        
+             return vista
         
     }
     

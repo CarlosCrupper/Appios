@@ -12,6 +12,8 @@ class FilaTableViewCell: UITableViewCell {
 
     @IBOutlet weak var lbIzquierda: UILabel!
     @IBOutlet weak var lbDerecha: UILabel!
+    @IBOutlet weak var imgFoto: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
